@@ -21,13 +21,13 @@ namespace WebApplication1.Controllers
 
         // GetTransactions: Retrieve all transactions or transactions for a specific customer/account/card
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Transaction>>> GetTransactions(int? accountId = null, int? cardId = null)
+        public async Task<ActionResult<IEnumerable<Transaction>>> GetTransactions(int? AccountId = null, int? cardId = null)
         {
             var transactions = _context.Transactions.AsQueryable();
 
-            if (accountId.HasValue)
+            if (AccountId.HasValue)
             {
-                transactions = transactions.Where(t => t.AccountId == accountId.Value);
+                transactions = transactions.Where(t => t.AccountId == AccountId.Value);
             }
             if (cardId.HasValue)
             {

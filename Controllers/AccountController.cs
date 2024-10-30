@@ -21,11 +21,11 @@ namespace WebApplication1.Controllers
 
         // GetAccounts: Get all accounts or accounts of a specific customer
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccounts(int? customerId = null)
+        public async Task<ActionResult<IEnumerable<Account>>> GetAccounts(int? CustomerId = null)
         {
-            if (customerId.HasValue)
+            if (CustomerId.HasValue)
             {
-                return await _context.Accounts.Where(a => a.CustomerId == customerId.Value).ToListAsync();
+                return await _context.Accounts.Where(a => a.CustomerId == CustomerId.Value).ToListAsync();
             }
             return await _context.Accounts.ToListAsync();
         }

@@ -21,11 +21,11 @@ namespace WebApplication1.Controllers
 
         // GetCards: Get all cards or cards linked to a specific account
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Card>>> GetCards(int? accountId = null)
+        public async Task<ActionResult<IEnumerable<Card>>> GetCards(int? AccountId = null)
         {
-            if (accountId.HasValue)
+            if (AccountId.HasValue)
             {
-                return await _context.Cards.Where(c => c.AccountId == accountId.Value).ToListAsync();
+                return await _context.Cards.Where(c => c.AccountId == AccountId.Value).ToListAsync();
             }
             return await _context.Cards.ToListAsync();
         }

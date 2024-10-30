@@ -15,11 +15,19 @@ namespace WebApplication1.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>().ToTable("customers");
-            modelBuilder.Entity<Account>().ToTable("accounts");
-            modelBuilder.Entity<Card>().ToTable("cards");
-            modelBuilder.Entity<TransactionType>().ToTable("transactions_types");
-            modelBuilder.Entity<Transaction>().ToTable("transactions");
+            modelBuilder.Entity<Customer>()
+            .ToTable("customers");
+            modelBuilder.Entity<Account>()
+            .ToTable("accounts")
+            .Property(a => a.AccountId).HasColumnName("account_id");
+            modelBuilder.Entity<Card>()
+            .ToTable("cards")
+            .Property(a => a.AccountId).HasColumnName("account_id");
+            modelBuilder.Entity<TransactionType>()
+            .ToTable("transactions_types");
+            modelBuilder.Entity<Transaction>()
+            .ToTable("transactions")
+            .Property(a => a.AccountId).HasColumnName("account_id");
         }
     }
 }

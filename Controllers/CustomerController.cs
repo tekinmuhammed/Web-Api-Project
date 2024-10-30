@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
+    /// <summary>
+    /// Müşteri işlemlerini yönetir.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -19,6 +22,10 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Tüm müşterileri getirir.
+        /// </summary>
+        /// <returns>Müşteri listesi.</returns>
         // Get all customers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
@@ -27,7 +34,11 @@ namespace WebApplication1.Controllers
             return await _context.Customers.ToListAsync();
         }
 
-        // Get a specific customer
+        /// <summary>
+        /// ID'ye göre bir müşteriyi getirir.
+        /// </summary>
+        /// <param name="id">Müşteri ID</param>
+        /// <returns>Tek bir müşteri bilgisi.</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
