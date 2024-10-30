@@ -1,27 +1,31 @@
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data; // Burada Data klasörü altında oluşturacağımız veri tabanı context'ini kullanacağız.
+using WebApplication1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// add services to the container.
 builder.Services.AddControllers();
 
-// PostgreSQL bağlantısını yapılandır
+// postgreSQL connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Swagger'ı projeye ekle
+// swagger eklemesi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger yapılandırması
+// configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+//    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bank API V1");
+    });
 }
 
 app.UseHttpsRedirection();
