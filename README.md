@@ -20,7 +20,7 @@ This project is built with .NET Core 6 and Entity Framework Core. Follow the ste
 ### Installation
 
 #### 1. Clone the Repository
-git clone [https://github.com/your-username/banking-app-api.git](https://github.com/tekinmuhammed/Web-Api-Project)
+git clone https://github.com/tekinmuhammed/Web-Api-Project
 cd banking-app-api
 
 #### 2. Install Dependencies
