@@ -21,14 +21,17 @@ This project is built with .NET Core 6 and Entity Framework Core. Follow the ste
 
 #### 1. Clone the Repository
 git clone https://github.com/tekinmuhammed/Web-Api-Project
+
 cd banking-app-api
 
 #### 2. Install Dependencies
 Run the following command in the project directory to install the required NuGet packages:
+
 dotnet restore
 
 #### 3. Configure Database Settings
 In **appsettings.json** or **appsettings.Development.json**, update the **ConnectionStrings** section with your PostgreSQL database connection string:
+
 "ConnectionStrings": {
     "DefaultConnection": "Host=localhost;Database=bankingappdb;Username=yourusername;Password=yourpassword"
 }
