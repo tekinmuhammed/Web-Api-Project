@@ -1,0 +1,52 @@
+# Ignore build output directories
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# IDE-specific files
+.idea/
+.DS_Store
+
+# Configuration files
+appsettings.*.json
+
+# Package directories
+packages/
+node_modules/
+
+# Dependency lock files
+project.lock.json
+project.fragment.lock.json
+
+# NuGet packages cache
+*.nupkg
+*.snupkg
+
+# Rider settings
+.idea/
+
+# Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+~$*
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Other auto-generated files
+*.generated.cs
