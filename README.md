@@ -17,6 +17,31 @@ This project is built with .NET Core 6 and Entity Framework Core. Follow the ste
 * PostgreSQL
 * Visual Studio 2022 or later
 
+### Installation
+
+#### 1. Clone the Repository
+git clone https://github.com/your-username/banking-app-api.git
+cd banking-app-api
+
+#### 2. Install Dependencies
+Run the following command in the project directory to install the required NuGet packages:
+dotnet restore
+
+#### 3. Configure Database Settings
+In **appsettings.json** or **appsettings.Development.json**, update the **ConnectionStrings** section with your PostgreSQL database connection string:
+"ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Database=bankingappdb;Username=yourusername;Password=yourpassword"
+}
+
+#### 4. Create and Apply Migrations to Database
+dotnet ef database update
+
+#### 5. Run the Application
+dotnet run
+
+#### 6. Access Swagger Interface
+Once the application is running, visit **http://localhost:5000/swagger** to view the API documentation.
+
 ## API Usage
 This project provides API endpoints for main banking functionalities. You can see details and test each endpoint through the Swagger interface.
 
